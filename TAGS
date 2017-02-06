@@ -1,0 +1,41 @@
+
+./app/Main.hs,653
+module Main Main3,4
+newtype Leibniz Leibniz11,12
+newtype Leibniz a b = Leibniz Leibniz11,12
+instance instance13,14
+type (â(17,18
+type (â½)â½17,18
+runLeibniz runLeibniz22,23
+runLeibniz runLeibniz23,24
+symm symm26,27
+symm symm27,28
+coerceSymm coerceSymm30,31
+coerceSymm coerceSymm31,32
+coerce coerce34,35
+coerce coerce35,36
+data SubReq SubReq39,40
+    SubReq1 SubReq140,41
+  | SubReq2 SubReq241,42
+data Req Req43,44
+    Req1 Req144,45
+  | Req2 Req245,46
+  | Req3 Req346,47
+evalSubReq evalSubReq48,49
+evalSubReq evalSubReq49,50
+evalReq evalReq52,53
+evalReq evalReq53,54
+main main57,58
+main main58,59
+
+./Setup.hs,15
+main main1,2
+
+./src/Lib.hs,65
+module LibLib0,1
+someFunc someFunc4,5
+someFunc someFunc5,6
+
+./test/Spec.hs,30
+main main0,1
+main main1,2
