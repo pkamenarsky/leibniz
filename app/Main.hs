@@ -31,36 +31,36 @@ instance Category Leibniz where
   id    = Leibniz id
   _ . _ = Leibniz unsafeCoerce
 
-type (∽) = Leibniz
+type (:::) = Leibniz
 
-infix 4 ∽
+infix 4 :::
 
 -- | Unpack a Leibniz equality.
-runLeibniz :: forall f a b. a ∽ b -> f a -> f b
+runLeibniz :: forall f a b. a ::: b -> f a -> f b
 runLeibniz (Leibniz f) = f
 
 -- | Equality is symmetric.
-symm :: forall a b. a ∽ b -> b ∽ a
+symm :: forall a b. a ::: b -> b ::: a
 symm _ = Leibniz unsafeCoerce
 
 -- | Coerce a value of type `b` to a value of the Leibniz-equal type `a`.
-coerceSymm :: forall a b. a ∽ b -> b -> a
+coerceSymm :: forall a b. a ::: b -> b -> a
 coerceSymm _ = unsafeCoerce
 
 -- | Coerce a value of type `a` to a value of the Leibniz-equal type `b`.
-coerce :: forall a b. a ∽ b -> a -> b
+coerce :: forall a b. a ::: b -> a -> b
 coerce _ = unsafeCoerce
 
 --------------------------------------------------------------------------------
 
 data SubReq a =
-    SubReq1 String (a ∽ String)
-  | SubReq2 Double (a ∽ Double)
+    SubReq1 String (a ::: String)
+  | SubReq2 Double (a ::: Double)
   deriving (Show, Generic, A.ToJSON)
 
 data Req a =
-    Req1 Int (a ∽ Int)
-  | Req2 Int (a ∽ Bool)
+    Req1 Int (a ::: Int)
+  | Req2 Int (a ::: Bool)
   | Req3 (SubReq a)
   deriving (Show, Generic, A.ToJSON)
 
