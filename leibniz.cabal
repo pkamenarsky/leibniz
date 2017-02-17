@@ -25,6 +25,7 @@ executable leibniz-exe
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , leibniz
+                     , aeson
   default-language:    Haskell2010
 
 test-suite leibniz-test
