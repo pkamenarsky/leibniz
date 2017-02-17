@@ -88,7 +88,12 @@ evalReq (Req2 a proof) = coerceSymm proof (a > 50)
 evalReq (Req3 a) = evalSubReq a
 
 main :: IO ()
-main = print json
+main = do
+  r <- match json f
+  print r
   where
     a    = evalReq (Req3 (SubReq1 "sub_req_1" id))
-    json = A.encode (Req3 (SubReq1 "sub_req_1" id))
+    json = A.toJSON (Req3 (SubReq1 "sub_req_1" id))
+
+    f :: Req a -> IO a
+    f (Req1 a proof) = return $ coerceSymm proof $ a
